@@ -8,12 +8,12 @@ def binary_search(item, arr, min=0, max=arr.length)
     binary_search(item, arr, min, max)
   elsif item == arr[mid]
     return mid
-  else
-    return nil
   end
 end
 
-sorted_array = [453]
+# need to refactor for nil handling
+
+sorted_array = [789]
 desired_length = 18
 until
   sorted_array.length == desired_length
@@ -22,5 +22,5 @@ until
 end
 
 p sorted_array
-p "number is at index #{sorted_array.find_index(453)}"
-p binary_search(453, sorted_array)
+p "number is at index #{sorted_array.find_index(789)}"
+p binary_search(789, sorted_array)
