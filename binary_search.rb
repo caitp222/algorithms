@@ -1,33 +1,19 @@
-def binary_search(item, arr)
-  p arr
-  max = arr.length-1
-  p "max: #{max}"
-  min = 0
-  p "mid"
-  p mid = (max + min)/2
-  p "max == mid"
-  p max == mid
-  return nil if min == max
-
-  if item == arr[mid]
-    return mid
-  end
-
+def binary_search(item, arr, min=0, max=arr.length)
+  mid = (max + min)/2
   if item > arr[mid]
-    p "item greater than mid"
-    min = mid
-    p min
+    min = mid + 1
+    binary_search(item, arr, min, max)
+  elsif item < arr[mid]
+    max = mid - 1
+    binary_search(item, arr, min, max)
+  elsif item == arr[mid]
+    return mid
   else
-    p "item less than mid"
-    max = mid
-    p max
+    return nil
   end
-
-  binary_search(item, arr[min..max])
-
 end
 
-sorted_array = [497]
+sorted_array = [453]
 desired_length = 18
 until
   sorted_array.length == desired_length
@@ -36,5 +22,5 @@ until
 end
 
 p sorted_array
-p sorted_array.find_index(497)
-p binary_search(497, sorted_array)
+p "number is at index #{sorted_array.find_index(453)}"
+p binary_search(453, sorted_array)
