@@ -1,3 +1,6 @@
+# given two sorted arrays of length x and y, merge then so that first array
+# contains lowest x elements and second array contains highest y elements
+
 # to be done in place and not using any other data structure
 
 def inplace_merge(arr1, arr2)
