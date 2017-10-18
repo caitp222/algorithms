@@ -11,7 +11,7 @@ def binary_search(item, arr, min=0, max=arr.length)
   end
 end
 
-# need to refactor for nil handling
+# need to refactor to detect if item isn't in array
 
 sorted_array = [789]
 desired_length = 18
