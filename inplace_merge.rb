@@ -16,7 +16,7 @@ def inplace_merge(arr1, arr2)
     i += 1
     w = 0
   end
-  "x: #{arr1}, Y:#{arr2}"
+  "#{arr1}, #{arr2}"
 end
 
 def sort_array(arr)
@@ -30,3 +30,7 @@ def sort_array(arr)
   end
   arr
 end
+
+arr1 = [1,4,7,8,10]
+arr2 = [2,3,9]
+p inplace_merge(arr1, arr2)
