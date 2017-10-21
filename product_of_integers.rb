@@ -12,7 +12,7 @@ def product_of_integers(array)
     memo = 1
     x = 0
     while x < array.length
-      memo = memo*array[x] if x != i
+      memo = memo * array[x] if x != i
       x += 1
     end
     new_array.push(memo)
@@ -20,3 +20,5 @@ def product_of_integers(array)
   end
   new_array
 end
+
+p product_of_integers([1, 7, 3, 4]) == [84, 12, 28, 21]
