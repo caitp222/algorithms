@@ -1,3 +1,5 @@
+# could probably do with a refactor
+
 def englishify(num):
     englishified_string = ""
     decoder = {
@@ -57,6 +59,8 @@ def englishify(num):
         englishified_string += decoder[ten_thousands] + " "
         if thousands is not 0:
             englishified_string += decoder[thousands] + " thousand "
+    else:
+        englishified_string += decoder[thousands] + " thousand "
     if hundreds is not 0:
         englishified_string += decoder[hundreds] + " hundred "
     if num > 100 and tens is not 0 and digits is not 0:
