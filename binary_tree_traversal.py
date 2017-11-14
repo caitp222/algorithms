@@ -20,7 +20,6 @@ class BinaryTree:
       self.right.insert_right(data)
 
   def preorder_traversal(self):
-      print self.data
       if self.left:
           self.left.preorder_traversal()
       if self.right:
