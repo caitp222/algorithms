@@ -7,6 +7,11 @@ magazine = magazine.split(" ")
 ransom = "give one grand today"
 ransom = ransom.split(" ")
 
+magazine1 = "two times three is not four"
+magazine1 = magazine1.split(" ")
+ransom1 = "two times two is four"
+ransom1 = ransom1.split(" ")
+
 def magazine_ransom_note(magazine, ransom)
   m = magazine.length
   n = ransom.length
@@ -35,3 +40,4 @@ def magazine_ransom_note(magazine, ransom)
 end
 
 puts magazine_ransom_note(magazine, ransom)
+puts magazine_ransom_note(magazine1, ransom1)
