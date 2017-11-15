@@ -1,7 +1,4 @@
 # from cracking the coding challenge
-
-#!/bin/ruby
-
 magazine = "give me one grand today night"
 magazine = magazine.split(" ")
 ransom = "give one grand today"
