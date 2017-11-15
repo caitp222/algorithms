@@ -1,11 +1,16 @@
-# top down memoization
+# recursive
+def fib(n):
+    if n <= 1:
+        return n
+    else:
+        return fib(n - 1) + fib(n - 2)
 
-fib_dict = {0: 0, 1: 1}
-def fib_1(n):
+# top down memoization
+def fib_1(n, fib_dict = {0: 0, 1: 1}):
     if n <= 1:
         return n
     elif n not in fib_dict:
-        fib_dict[n] = fib_1(n - 1) + fib_dict[n - 2]
+        fib_dict[n] = fib_1(n - 1, fib_dict) + fib_dict[n - 2]
     return fib_dict[n]
 
 # bottom up memoization
@@ -16,5 +21,6 @@ def fib_2(n):
             fib_dict[x] = fib_dict[x - 1] + fib_dict[x - 2]
     return fib_dict[n]
 
+print(fib(17) == 1597)
 print(fib_1(17) == 1597)
 print(fib_2(17) == 1597)
