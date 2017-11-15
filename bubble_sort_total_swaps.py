@@ -1,5 +1,6 @@
 # bubble sort re-done in python and keeping track of total swaps
 
+
 def bubble_sort(lst):
   sorted = False
   total_swaps = 0
@@ -21,6 +22,6 @@ def bubble_sort(lst):
   print("The first element in the array is %s" % (str(lst[0])))
   print("The last element in the array is %s" % (str(lst[-1])))
 
-
+  
 lst = [4,8,7,1,4,9,0,3,5]
 print(bubble_sort(lst))
