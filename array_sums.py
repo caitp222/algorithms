@@ -15,8 +15,7 @@ def three_sum(arr, n):
     ans = []
     while i < j:
         x = n - arr[j] - arr[i]
-        stuff = x is not arr[j] and x is not arr[i] and x in arr
-        if stuff:
+        if x is not arr[j] and x is not arr[i] and x in arr:
             ans.append([arr[i], arr[j], x])
         i += 1
         j -= 1
