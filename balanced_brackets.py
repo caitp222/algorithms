@@ -14,10 +14,7 @@ def balanced_brackets(str):
             arr = arr[:-1]
         else:
             return False
-    if len(arr) == 0:
-        return True
-    else:
-        return False
+    return len(arr) == 0
 
 
 
