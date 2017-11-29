@@ -28,4 +28,4 @@ def reverse(str):
 
 
 print(max_palindromic_substring("bananas"))
-# print(max_palindromic_substring("ABDCBCDBDCBBC"))
+print(max_palindromic_substring("ABDCBCDBDCBBC"))
