@@ -23,7 +23,7 @@ def populate_possibilities(st):
                 for k in range(len(sudoku_matrix)):
                     if type(sudoku_matrix[k][j]) is not list and sudoku_matrix[k][j] in sudoku_matrix[i][j]:
                         sudoku_matrix[i][j].remove(sudoku_matrix[k][j])
-                box = create_box(st, i, j)
+                box = create_box(sudoku_matrix, i, j)
                 for el in box:
                     if el in sudoku_matrix[i][j]:
                         sudoku_matrix[i][j].remove(el)
@@ -43,6 +43,6 @@ ans = sudoku_solve(puzzle)
 for row in ans:
     print row
 # print sudoku_solve(puzzle)
-# print create_box(puzzle,0,8)
-# print create_box(puzzle,6,0)
-# print create_box(puzzle,6,6)
+print create_box(create_matrix(puzzle),0,8)
+print create_box(create_matrix(puzzle),6,0)
+print create_box(create_matrix(puzzle),6,6)
