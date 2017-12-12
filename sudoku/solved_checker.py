@@ -31,11 +31,11 @@
 #             return False
 #     return True
 
+import copy
+
 def is_solved(arr):
     sorted_arr = ["1","2","3","4","5","6","7","8","9"]
-    rows = []
-    for i in range(len(arr)):
-        rows.append(arr[i])
+    rows = copy.deepcopy(arr)
     columns = []
     for i in range(len(arr)):
         column = []

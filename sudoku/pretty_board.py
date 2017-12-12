@@ -9,7 +9,9 @@ def pretty_board(st):
         elif (x + 1) % 3 == 0:
             board += "   "
     print board
+    print "\n"
 
 def pretty_matrix(arr):
     for row in arr:
         print row
+    print "\n"

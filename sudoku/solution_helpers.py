@@ -38,9 +38,12 @@ def populate_possibilities(arr):
     return arr
 
 # if an element is an array of length 1, it flattens it
+# returns count of elements flattened
 def flatten_matrix(arr):
+    count = 0
     for i in range(len(arr)):
         for j in range(len(arr[0])):
             if type(arr[i][j]) is list and len(arr[i][j]) == 1:
                 arr[i][j] = arr[i][j][0]
-    return arr
+                count += 1
+    return count
