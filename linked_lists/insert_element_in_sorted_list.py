@@ -12,6 +12,8 @@ def insert_sorted(node, head_ref):
             node.next = head_ref.next
             head_ref.next = node
         head_ref = head_ref.next
+    if head_ref.next == None and node.data > head_ref.data:
+            head_ref.next = node
 
 def print_list(head_ref):
     while head_ref.next != None:
