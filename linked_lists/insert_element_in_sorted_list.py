@@ -7,11 +7,12 @@ class Node:
 def insert_sorted(node, head_ref):
     if node.data < head_ref.data:
         node.next = head_ref
-    while head_ref.next != None:
-        if node.data > head_ref.data and node.data < head_ref.next.data:
-            node.next = head_ref.next
-            head_ref.next = node
-        head_ref = head_ref.next
+    else:
+        while head_ref.next != None:
+            if node.data > head_ref.data and node.data < head_ref.next.data:
+                node.next = head_ref.next
+                head_ref.next = node
+            head_ref = head_ref.next
 
 def print_list(head_ref):
     while head_ref.next != None:
