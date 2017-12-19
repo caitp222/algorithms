@@ -57,7 +57,6 @@ class BinaryTreeNode:
               nodes.append(current)
               current = current.left
 
-
   def preorder_traversal_recursive(self):
       print self.data
       if self.left:
@@ -66,10 +65,39 @@ class BinaryTreeNode:
           self.right.preorder_traversal()
 
   def postorder_traversal_iterative(self):
-      pass
+      current = self
+      nodes = []
+      output = []
+      while current.left != None or len(nodes) >= 1:
+          print "current is %i" %(current.data)
+          if len(nodes) > 0:
+              print "nodes[-1] is %i" %(nodes[-1].data)
+          if current.left == None and current.right == None:
+              while current.right == None:
+                  output.append(current.data)
+                  current = nodes[-1]
+                  del(nodes[-1])
+              print current.data
+              current = current.right
+              # break
+          else:
+              nodes.append(current)
+              current = current.left
+      print nodes
+      print output
+
 
   def postorder_traversal_recursive(self):
-      pass
+      if self.left == None:
+          return
+      self.left.postorder_traversal_recursive()
+      print self.left.data
+      if self.right == None:
+          return
+      self.right.postorder_traversal_recursive()
+      print self.right.data
+      # need to figure out the root node issue
+      # print self.data
 
 
 # build tree
@@ -81,5 +109,6 @@ tree.insert_right(6)
 tree.right.insert_left(5)
 tree.right.insert_left(7)
 tree.right.left.insert_right(8)
-tree.preorder_traversal_iterative()
-# print(tree.inorder_traversal_recursive())
+
+# tree.postorder_traversal_recursive()
+tree.postorder_traversal_iterative()
