@@ -7,10 +7,9 @@ class LinkedListNode:
         self.next = next_node
 
 def reverse_linked_list(head_ref):
-    arr = []
-    current = head_ref
-    while head_ref != None:
-        arr.append(head_ref)
+    arr = [head_ref]
+    while head_ref.next != None:
+        arr.append(head_ref.next)
         head_ref = head_ref.next
     while len(arr) > 0:
         current = arr[-1]
@@ -19,7 +18,7 @@ def reverse_linked_list(head_ref):
             current.next = None
         else:
             current.next = arr[-1]
-
+    return head_ref
 
 def print_list(head_ref):
     while head_ref != None:
@@ -35,6 +34,4 @@ item2 = LinkedListNode(2, item3)
 item1 = LinkedListNode(1, item2)
 
 print_list(item1)
-reverse_linked_list(item1)
-print_list(item6)
-print_list(item1)
+print_list(reverse_linked_list(item1))
