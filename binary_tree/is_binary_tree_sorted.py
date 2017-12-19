@@ -32,7 +32,7 @@ def binary_tree_sorted(top_node):
             right = binary_tree_sorted(top_node.right)
         return left and right
 
-# create binary binary tree
+# create binary tree
 top_node = BinaryTreeNode(5)
 top_node.insert_left(BinaryTreeNode(3))
 top_node.left.insert_left(BinaryTreeNode(1))
