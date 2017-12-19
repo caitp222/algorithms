@@ -42,7 +42,21 @@ class BinaryTreeNode:
           self.right.inorder_traversal_recursive()
 
   def preorder_traversal_iterative(self):
-      pass
+      current = self
+      nodes = []
+      while current != None or len(nodes) > 0:
+          if current == None:
+              current = nodes[-1]
+              del(nodes[-1])
+              while current.right == None and len(nodes) > 0:
+                  current = nodes[-1]
+                  del(nodes[-1])
+              current = current.right
+          else:
+              print current.data
+              nodes.append(current)
+              current = current.left
+
 
   def preorder_traversal_recursive(self):
       print self.data
@@ -67,5 +81,5 @@ tree.insert_right(6)
 tree.right.insert_left(5)
 tree.right.insert_left(7)
 tree.right.left.insert_right(8)
-tree.inorder_traversal_iterative()
+tree.preorder_traversal_iterative()
 # print(tree.inorder_traversal_recursive())
