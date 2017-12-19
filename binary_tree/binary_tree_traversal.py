@@ -20,11 +20,21 @@ class BinaryTreeNode:
       self.right.insert_right(data)
 
   def inorder_traversal_iterative(self):
-      pass
+      current_node = self
+      nodes = []
+      while len(nodes) >= 1 or current_node != None:
+          if current_node != None:
+              nodes.append(current_node)
+              current_node = current_node.left
+          else:
+              current_node = nodes[-1]
+              del(nodes[-1])
+              print current_node.data
+              current_node = current_node.right
 
   def inorder_traversal_recursive(self):
       if self == None:
-          return self
+          return
       if self.left != None:
           self.left.inorder_traversal_recursive()
       print self.data
@@ -57,5 +67,5 @@ tree.insert_right(6)
 tree.right.insert_left(5)
 tree.right.insert_left(7)
 tree.right.left.insert_right(8)
-tree.inorder_traversal_recursive()
+tree.inorder_traversal_iterative()
 # print(tree.inorder_traversal_recursive())
