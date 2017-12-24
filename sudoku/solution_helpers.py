@@ -28,6 +28,9 @@ def populate_possibilities(arr):
             if arr[i][j] == "-" or type(arr[i][j]) is list:
                 if arr[i][j] == "-":
                     arr[i][j] = [x for x in cell_possibilities if x not in arr[i]]
+                for k in range(len(arr[0])):
+                    if type(arr[i][k]) is not list and arr[i][k] in arr[i][j]:
+                        arr[i][j].remove(arr[i][k])
                 for k in range(len(arr)):
                     if type(arr[k][j]) is not list and arr[k][j] in arr[i][j]:
                         arr[i][j].remove(arr[k][j])
