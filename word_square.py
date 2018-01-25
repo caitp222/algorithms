@@ -1,3 +1,5 @@
+# https://techdevguide.withgoogle.com/resources/former-coding-interview-question-word-squares/#!
+
 def is_word_square(lst, x = 0, y = 0):
     if len(lst) == 0 or len(lst) != len(lst[0]):
         return False
